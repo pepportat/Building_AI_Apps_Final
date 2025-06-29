@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Meeting Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meeting Intelligence Platform</h1>
+            <p>Upload, transcribe, analyze, and search your meetings</p>
+        </header>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <h2>Upload New Meeting</h2>
+            <form id="uploadForm">
+                <input type="text" id="meetingTitle" placeholder="Meeting Title" required>
+                <input type="file" id="audioFile" accept=".mp3,.wav,.m4a" required>
+                <button type="submit">Upload & Process</button>
+            </form>
+            <div id="uploadStatus"></div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <h2>Search Meetings</h2>
+            <div class="search-bar">
+                <input type="text" id="searchQuery" placeholder="Search across all meetings...">
+                <button onclick="searchMeetings()">Search</button>
+            </div>
+            <div id="searchResults"></div>
+        </section>
+
+        <!-- Meetings List -->
+        <section class="meetings-section">
+            <h2>Recent Meetings</h2>
+            <div id="meetingsList"></div>
+        </section>
+
+        <!-- Meeting Detail Modal -->
+        <div id="meetingModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Meeting Details</h2>
+                    <div class="modal-actions">
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+                <div class="tabs" id="modalTabs"></div>
+                <div class="modal-body" id="meetingDetail"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
